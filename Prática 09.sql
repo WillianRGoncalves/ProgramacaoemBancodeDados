@@ -21,7 +21,7 @@ update Departamento set total_sal = 0;
 select * from Departamento;
 
 create or replace trigger total_salario1
-after insert or update or delete on Empregado
+before insert or update or delete on Empregado
 for each row when (NEW.dptno is not null)
   begin
   if deleting then
