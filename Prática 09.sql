@@ -22,7 +22,7 @@ select * from Departamento;
 
 create or replace trigger total_salario1
 before insert or update or delete on Empregado
-for each row when (NEW.dptno is not null)
+for each row when /*(NEW.dptno is not null)*/
   begin
   if deleting then
       update Departamento set total_sal  = total_sal - :old.salario where cod = :old.dptno;
